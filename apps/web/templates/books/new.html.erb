@@ -24,3 +24,16 @@ We’ve added <label> tags for our form fields, and wrapped each field in a cont
     end
   end
 %>
+
+
+
+<% unless params.valid? %>
+  <div class="errors">
+    <h3>There was a problem with your submission</h3>
+    <ul>
+      <% params.error_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
