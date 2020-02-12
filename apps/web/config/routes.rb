@@ -7,3 +7,4 @@
 #point to the apps root url to the index action of the home controller.
 root to: 'home#index'
 get '/books', to: 'books#index'
+get '/books/new', to: 'books#new'
