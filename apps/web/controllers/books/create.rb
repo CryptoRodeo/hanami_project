@@ -19,7 +19,7 @@ module Web
           if params.valid?
             @book = BookRepository.new.create(params[:book])
 
-            redirect_to '/books'
+            redirect_to routes.books_path # same as redirecting to '/books'
           else
             self.status = 422
           end

@@ -8,7 +8,9 @@
 We’ve added <label> tags for our form fields, and wrapped each field in a container <div> using Hanami’s HTML builder helper.
 -->
 <%=
-  form_for :book, '/books' do
+# the routes helper method that is available in our views and actions to access
+# route-specific helper methods:
+  form_for :book, routes.books_path do # routes.books_path = '/books'
     div class: 'input' do
       label      :title
       text_field :title
