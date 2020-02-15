@@ -1,0 +1,54 @@
+hanami architecture:
+
+- The core of the product is expressed by a set of use cases that the product
+  implements
+
+- The delivery mechanisms are the interfaces that makes these features
+  available to the outside works
+
+
+- The libraries lib/ and apps/ are home to the main parts described above.
+
+
+Application core:
+- The core set of functions for the app.
+
+
+
+The lib/ directory:
+- contains the entry point for the application
+
+- all code is required and initialized under lib/
+- Hanami::Model
+    - the default choice for persisting Ruby objects
+
+- Entities:
+    - The core of the app
+    - a domain object designed by its identity
+        - deals with one and only one responsiblity: handling domain logic
+       
+- Domain logic: 
+    - The set of values permitted for an attribute/column in a table and how
+      the data can be created, stored and changed.
+    
+    Entity Schema:
+    - Each entity holds a schema of attributes / columns:
+        - The schema holds the names and types of the attributes
+
+    - The role of a schema is to whitelist the data used during initialization.
+        - also enforce data integrity
+    
+    - each entity has their own repository
+
+
+
+- Repositories:
+    - an object that acts as the middle man between entities and the
+      persistence layer / database manipulation
+    
+    - Has a standard api to query and execute db commands.
+
+    - Storage independent:
+        - all queries and commands go to their designated adapters.
+
+    - collection: a homogenous set of records.
