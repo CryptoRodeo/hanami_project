@@ -1,0 +1,59 @@
+
+
+Hanami Routing
+==============
+
+actions:
+- objects that respond to incoming http requests.
+
+- Have a nested naming like Web::Controllers::Home::Index
+
+- In hanami, an action is an object while a controller is a Ruby module that
+  groups them.
+
+    - so Web::Controllers contains all the actions
+        - Web::Controllers::Home::Index contains the actions for home
+          directory index.
+
+- Action naming:
+    
+    - Action files begin with a module declaration
+
+
+    - The first module is the name of the application, which by default is
+      Web.
+        - For example: For an app named Web, the controllers are under
+          Web::Controllers
+
+    - The other modules are for the directories associated with the request:
+        - example: Web::Controllers::Home::Index is a controller for the index
+          of the Web applications home directory.
+
+    - Hanami can run multiple applications within the same Ruby process.
+        - All these apps are stored in the apps/ directory
+        - Web is the main, default app.
+
+    - The names for these controllers are used as top-level modules to:
+        - contain inner components like actions and views
+        - avoid naming collisions
+
+
+    action naming convention in routing:
+        -> example: "home#index"
+            - home is translated to Home
+            - The same applies for index.
+
+    Hanami takes this shortened naming convention and figures out the namespace Web::Controllers to create
+    a full class name
+
+Mounting Apps:
+    - When mounting apps, use the mount function within the hanami environment
+      config file within the Hanami.configure block.
+
+Action Module:
+- Hanami emphasizes composition over inheritance.
+    - This is why components are provided as modules to include instead of
+      classes to inherit from.
+
+- To keep action modules seperated between apps such as Web or Admin, include
+  Web::Action and Admin::Action when needed.
