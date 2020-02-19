@@ -2,10 +2,11 @@ hanami architecture:
 
 - The core of the product is expressed by a set of use cases that the product
   implements
+    - The lib/ directory
 
 - The delivery mechanisms are the interfaces that makes these features
   available to the outside works
-
+    - The apps/ directory
 
 - The libraries lib/ and apps/ are home to the main parts described above.
 
@@ -18,17 +19,28 @@ The lib/ directory:
 
 - all code is required and initialized under lib/
 
+<<<<<<< HEAD
 - the Model in MVC
 - Hanami::Model
     - the default choice for persisting Ruby objects
     - Uses 2 concepts to achieve this: entities and repositories
 
+=======
+
+- Hanami::Model
+    - the default choice for persisting Ruby objects
+    
+    - has a convenient api for executing queries and commands against a
+      database.
+        - The api uses entities and repositories to achieve this.
+>>>>>>> 4687fff5b2f2d8f2982280fd14a9f1d339a2e722
 
 - Entities:
     - The core of the app 
     - a domain object designed by its identity
         - deals with one and only one responsiblity: handling domain logic
        
+
 - Domain logic: 
     - The set of values permitted for an attribute/column in a table and how
       the data can be created, stored and changed.
@@ -45,6 +57,7 @@ The lib/ directory:
 
 
 - Repositories:
+
     - an object that acts as the middle man between entities and the
       persistence layer / database manipulation
     
@@ -54,13 +67,20 @@ The lib/ directory:
         - all queries and commands go to their designated adapters.
 
     - collection: a homogenous set of records.
+        - The collection corresponds / matches directly with an SQL table or
+          mongodb collection.
 
 
 
 Delivery Mechanisms:
 
+<<<<<<< HEAD
 
 - The View in MVC
+=======
+- Basically, what gets shown to the users
+
+>>>>>>> 4687fff5b2f2d8f2982280fd14a9f1d339a2e722
 
 - the files for this mechanism are found in the apps/web folder
 
