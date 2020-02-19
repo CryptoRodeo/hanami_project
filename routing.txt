@@ -3,17 +3,21 @@
 Hanami Routing
 ==============
 
+The Controller in MVC
+
 actions:
+
+- in the /apps/application-name directory
+
 - objects that respond to incoming http requests.
 
-- Have a nested naming like Web::Controllers::Home::Index
+- Have a nested naming syntax like: Web::Controllers::Home::Index
 
 - In hanami, an action is an object while a controller is a Ruby module that
   groups them.
 
     - so Web::Controllers contains all the actions
-        - Web::Controllers::Home::Index contains the actions for home
-          directory index.
+        - Web::Controllers::Home::Index contains the index action for the home controller
 
 - Action naming:
     
@@ -45,6 +49,8 @@ actions:
 
     Hanami takes this shortened naming convention and figures out the namespace Web::Controllers to create
     a full class name
+
+    - ex: Web::Controllers::Home::Index
 
 Mounting Apps:
     - When mounting apps, use the mount function within the hanami environment

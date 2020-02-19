@@ -13,5 +13,12 @@
  new_book GET, HEAD  /books/new                     Web::Controllers::Books::New
     books POST       /books                         Web::Controllers::Books::Create
 =end
+
+#index action of the home controller
 root to: 'home#index'
 resources :books, only: [:index, :new, :create]
+get '/hello', to: ->(env) { [200,{}, ['Hello from hanami']] }
+
+get '/dashboard/', to: 'dashboard#index'
+
+

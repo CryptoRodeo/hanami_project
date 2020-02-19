@@ -13,17 +13,19 @@ hanami architecture:
 Application core:
 - The core set of functions for the app.
 
-
-
 The lib/ directory:
 - contains the entry point for the application
 
 - all code is required and initialized under lib/
+
+- the Model in MVC
 - Hanami::Model
     - the default choice for persisting Ruby objects
+    - Uses 2 concepts to achieve this: entities and repositories
+
 
 - Entities:
-    - The core of the app
+    - The core of the app 
     - a domain object designed by its identity
         - deals with one and only one responsiblity: handling domain logic
        
@@ -55,8 +57,10 @@ The lib/ directory:
 
 
 
-
 Delivery Mechanisms:
+
+
+- The View in MVC
 
 - the files for this mechanism are found in the apps/web folder
 
