@@ -17,13 +17,8 @@
 #index action of the home controller
 root to: 'home#index'
 resources :books, only: [:index, :new, :create]
-<<<<<<< HEAD
 get '/hello', to: ->(env) { [200,{}, ['Hello from hanami']] }
 
 get '/dashboard/', to: 'dashboard#index'
 
 
-=======
-
-get '/hello', to: ->(env) {[200, {}, ['Hello from hanami!']]}
->>>>>>> 4687fff5b2f2d8f2982280fd14a9f1d339a2e722
