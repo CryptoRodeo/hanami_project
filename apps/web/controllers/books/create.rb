@@ -5,7 +5,7 @@ module Web
       class Create
         include Web::Action
 
-        expose :book
+        expose :book #passes this data to the view
         
         # Hanami controller actions can use the params class method to define acceptable incoming parameters.
         params do
