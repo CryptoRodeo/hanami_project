@@ -10,6 +10,8 @@ We’ve added <label> tags for our form fields, and wrapped each field in a cont
 <%=
 # the routes helper method that is available in our views and actions to access
 # route-specific helper methods:
+
+#the :book symbol contains the values that will be passed in the params.
   form_for :book, routes.books_path do # routes.books_path = '/books'
     div class: 'input' do
       label      :title

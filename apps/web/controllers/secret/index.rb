@@ -4,8 +4,9 @@ module Web
             class Index
                 include Web::Action
 
+                expose :message
                 def call(params)
-                  self.body = params[:message]
+                    @message = params[:message]
                 end
             end
         end
