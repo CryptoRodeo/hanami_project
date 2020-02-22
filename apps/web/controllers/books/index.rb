@@ -7,7 +7,8 @@ module Web
         expose :books
 
         def call(params)
-          @books = BookRepository.new.all
+          #book Repository is made, passed to the index page view.
+          @books = BookRepository.new.all 
         end
       end
     end

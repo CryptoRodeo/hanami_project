@@ -18,9 +18,12 @@ module Web
 
         def call(params)
           if params.valid?
+            @book = BookRepository.new.create(params[:book])
             #test to see if if the values passed are correct
             puts "~~~~~~~~~ POST REQUEST PARAMS ~~~~~~~~~~~~" 
             puts params[:book]
+            puts "~~~~~~~~~~~~~~~~~ book variable ~~~~~~~~~~~~~~"
+            puts @book.to_h
             redirect_to routes.books_path # same as redirecting to '/books'
           else
             self.status = 422
