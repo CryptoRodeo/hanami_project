@@ -4,11 +4,22 @@ require 'hanami/model'
 require_relative '../lib/bookshelf'
 require_relative '../apps/web/application'
 require_relative '../apps/admin/application'
+<<<<<<< HEAD
+=======
+require "hanami/middleware/body_parser"
+
+>>>>>>> b9d7b9aace0990a170c19f4e230cba2a29779a00
 
 Hanami.configure do
   mount Admin::Application, at: '/admin'
   mount Web::Application, at: '/'
 
+<<<<<<< HEAD
+=======
+  #Middleware
+  middleware.use Hanami::Middleware::BodyParser, :json
+
+>>>>>>> b9d7b9aace0990a170c19f4e230cba2a29779a00
   model do
     ##
     # Database adapter
