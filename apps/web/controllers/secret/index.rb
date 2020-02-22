@@ -3,6 +3,7 @@ module Web
         module Secret
             class Index
                 include Web::Action
+                
 
                 expose :message
                 def call(params)
