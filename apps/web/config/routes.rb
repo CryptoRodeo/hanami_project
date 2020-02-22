@@ -20,5 +20,3 @@ resources :books, only: [:index, :new, :create]
 get '/hello', to: ->(env) { [200,{}, ['Hello from hanami']] }
 
 get '/dashboard/', to: 'dashboard#index'
-
-
