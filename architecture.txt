@@ -19,13 +19,6 @@ The lib/ directory:
 
 - all code is required and initialized under lib/
 
-<<<<<<< HEAD
-- the Model in MVC
-- Hanami::Model
-    - the default choice for persisting Ruby objects
-    - Uses 2 concepts to achieve this: entities and repositories
-
-=======
 
 - Hanami::Model
     - the default choice for persisting Ruby objects
@@ -33,7 +26,6 @@ The lib/ directory:
     - has a convenient api for executing queries and commands against a
       database.
         - The api uses entities and repositories to achieve this.
->>>>>>> 4687fff5b2f2d8f2982280fd14a9f1d339a2e722
 
 - Entities:
     - The core of the app 
@@ -74,13 +66,8 @@ The lib/ directory:
 
 Delivery Mechanisms:
 
-<<<<<<< HEAD
-
-- The View in MVC
-=======
 - Basically, what gets shown to the users
 
->>>>>>> 4687fff5b2f2d8f2982280fd14a9f1d339a2e722
 
 - the files for this mechanism are found in the apps/web folder
 
